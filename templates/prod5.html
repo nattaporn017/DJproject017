@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <style>p.indent{ padding-left: 25.8em }</style>
+
+<div style="background-color: white" class="text-dark">
+    <h5 align="right"><a href={% url 'prod' %}><i class="fa fa-backward"> Back</i></a> </h5>
+<br><br>
+    <img src="{% static "images/w5.jpg"%}" width="120" height="270" class="mx-auto d-block "><br>
+<hr size="5" class="text-bg-dark text-center" width="100%"  >
+<p class="indent" >
+    <b>Chateau Mouton Rothschild 2013</b><br>
+    ฿23,500.00
+<br><br><br>
+    สุดยอดไวน์ระดับตำนานเรื่องรสชาติคงไม่ต้องอธิบายอะไรมาก<br>
+    สีแดงอมม่วง สดชื่นด้วยแร่ธาตุจากหิน Graphite<br>
+    ผสมผสานกับกลิ่นผลไม้ดำสุกได้ที่ กลิ่นใบยาสูบ<br>
+    ไม้ซีดาห์ มิ้นท์ และอบอวลไปด้วยกลิ่นของ ซินนาม่อน<br>
+    เครื่องเทศเด่นชัดแต่ก็ยังกลมกล่อม Full bodies ตั้งแต่เริ่มสัมผัสจนจบ.<br>
+<br>
+    Country: Bordeaux, France<br>
+    Sub Region: Pauillac<br>
+    Vintage: 2013<br>
+    Colour: Red<br>
+    Varietal: Bordeaux Blend<br>
+    Alcohol %: 13 – 13.53%<br>
+    Food Suggestion: Beef Menu<br>
+    Provenance (Old/New World): Old World<br>
+    Bottle Size: 750 ml.<br><br>
+</p>
+<a href="/ " class="btn btn-primary"> Back to Home</a><br><br>
+</div>
+{% endblock %}

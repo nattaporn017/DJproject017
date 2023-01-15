@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <style>p.indent{ padding-left: 25.8em }</style>
+
+<div style="background-color: white" class="text-dark">
+    <h5 align="right"><a href={% url 'prod' %}><i class="fa fa-backward"> Back</i></a> </h5>
+<br><br>
+    <img src="{% static "images/w7.jpg"%}" width="120" height="270" class="mx-auto d-block "><br>
+<hr size="5" class="text-bg-dark text-center" width="100%"  >
+<p class="indent" >
+    <b>Champagne Pommery Brut Rose</b><br>
+    ฿3,950.00
+<br><br><br>
+    Pommery Brut Rose NV แชมเปญขวดนี้ ทำให้นึกถึง ฟองที่เพิ่มขึ้นอย่างช้า ๆ เวลารินใส่แก้ว, <br>
+    จะสัมผัสได้ถึง กลิ่นของลูกแพร์ กุหลาบ สตอเบอร์รี่ และกลิ่นหอมอันมหัศจรรย์ของแป้งเบาๆ <br>
+    ดอกไม้สด ลูกแพร์หั่นฝอยและลูกพีช ทำให้สัมผัสได้ถึงความมีชีวิตชีวา และความสดชื่น<br>
+<br>
+    A festive salmon pink,with a subtle tinge of rust. Fruity and fleshy, <br>
+    elegantly robust with a perfect balance of freshness. Although delightful by day, <br>
+    soft lighting is the most flattering to Brut Rose’s colors, <br>
+    making it the champagne of romantic evenings, par excellence.<br>
+    To create Brut Rosé, Pommery selects some thirty crus. <br>
+    In this delicate composition, Chardonnay grapes are predominant, <br>
+    making up over one-third of the blend. <br>
+    A handful of Pinot Noir grapes are made into red wine before being blended <br>
+    with the Chardonnay and Pinot Meunier varieties. <br>
+    The Brut Rose is then aged in the Pommery cellars for an average of three years.<br>
+<br>
+    Country: Champagne, France<br>
+    Sub Region: Champagne Brut<br>
+    Vintage: NV<br>
+    Colour: Red<br>
+    Varietal: Champagne Blend<br>
+    Wine Style: Sparkling<br>
+    Alcohol %: 12%<br>
+    Food Suggestion: Shellfish, Crab and Lobster<br>
+    Provenance (Old/New World): Old World<br>
+    Bottle Size: 750 ml<br><br>
+</p>
+<a href="/ " class="btn btn-primary"> Back to Home</a><br><br>
+</div>
+{% endblock %}

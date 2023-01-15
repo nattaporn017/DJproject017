@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="row">
+    <div class=" text-dark " style="background-color: white" >
+
+<br>
+    <h5 align="right"><a href={% url 'home' %}><i class="fa fa-home"> Home</i></a> </h5>
+<br>
+
+        <div class="row ">
+            <img src="{% static "images/branerwine.png" %}" class="mx-auto d-block img-fluid" >
+        </div>
+
+        <h2 class="text-center display-3" style="background-color: lightyellow"  >&#127870;<b><u> สินค้านำเสนอ </u></b>&#127870;</h2>
+        <table class="table table-warning table-stripd  table-hover  table-bordered" >
+            <tr class="table table-danger" align="center">
+                <th width="45%">Wine</th>
+                <th width="25%">Country</th>
+                <th width="15%">Alcohol %</th>
+                <th width="15%">Price</th>
+            </tr>
+
+            <tr bgcolor="#dcdcdc">
+            <td align="center"><a href={% url 'prod1' %} > Dom Perignon 2009 </a></td>
+                <td>  Champagne, France </td>
+                <td align="center"> 12.5% </td>
+                <td align="center"> ฿9,990.00 </td>
+            </tr>
+
+            <tr bgcolor="#dcdcdc">
+            <td align="center"><a href={% url 'prod2' %} > Arietta,Napa Valley‘H Block Hudson Vineyards’2006 </a></td>
+                <td> United States </td>
+                <td align="center"> 14.1% </td>
+                <td align="center"> ฿7,000.00 </td>
+            </tr>
+
+            <tr bgcolor="#dcdcdc">
+            <td align="center"><a href={% url 'prod3' %} > Moet & Chandon Imperial Brut </a></td>
+                <td> Champagne, France </td>
+                <td align="center"> 12% </td>
+                <td align="center"> ฿3,450.00 </td>
+            </tr>
+
+            <tr bgcolor="#dcdcdc">
+            <td align="center"><a href={% url 'prod4' %} > Veuve Clicquot Brut NV </a></td>
+                <td> Champagne, France </td>
+                <td align="center"> 12% </td>
+                <td align="center"> ฿3,950.00 </td>
+            </tr>
+
+            <tr bgcolor="#dcdcdc">
+            <td align="center"><a href={% url 'prod5' %} > Chateau Mouton Rothschild 2013 </a></td>
+                <td> Bordeaux, France </td>
+                <td align="center"> 13 – 13.53% </td>
+                <td align="center"> ฿23,500.00 </td>
+            </tr>
+
+            <tr bgcolor="#dcdcdc">
+            <td align="center"><a href={% url 'prod6' %} > Chateau Mouton Rothschild 2011 </a></td>
+                <td> Bordeaux, France </td>
+                <td align="center"> 13 – 13.53% </td>
+                <td align="center"> ฿32,500.00 </td>
+            </tr>
+
+            <tr bgcolor="#dcdcdc">
+            <td align="center"><a href={% url 'prod7' %} > Champagne Pommery Brut Rose </a></td>
+                <td> Champagne, France </td>
+                <td align="center"> 12% </td>
+                <td align="center"> ฿3,950.00 </td>
+            </tr>
+
+            <tr bgcolor="#dcdcdc">
+            <td align="center"><a href={% url 'prod8' %} > Champagne Billecart-Salmon Brut Reserve NV </a></td>
+                <td> Champagne, France </td>
+                <td align="center"> 12% </td>
+                <td align="center"> ฿2,500.00 </td>
+            </tr>
+        </table>
+<br><br><br>
+
+    </div>
+</div>
+{% endblock %}

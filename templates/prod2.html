@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <style>p.indent{ padding-left: 25.8em }</style>
+
+<div style="background-color: white" class="text-dark">
+    <h5 align="right"><a href={% url 'prod' %}><i class="fa fa-backward"> Back</i></a> </h5>
+<br><br>
+    <img src="{% static "images/w2.jpg"%}" width="120" height="270" class="mx-auto d-block ">
+<br>
+    <hr size="5" class="text-bg-dark text-center" width="100%"  >
+<p class="indent" >
+    <b> Arietta, Napa Valley ‘H Block Hudson Vineyards’ 2006</b><br>
+    ฿7,000.00
+<br><br><br>
+    ไวน์พรีเมี่ยมที่ผสมผสานกันระหว่าง ไวน์ Napa และ Bordeaux ได้อย่างลงตัว Firm, gutsy and full-bodied, <br>
+    with tight cedar, tobacco, dried currant and spicy herbal elements that gain complexity, <br>
+    while maintaining a tight structure. <br>
+    Ends with mineral and herb notes and chewy tannins on a long finish.<br>
+<br>
+    Country: United States<br>
+    Sub Region: California<br>
+    Vintage: 2006<br>
+    Colour: Red<br>
+    Varietal: 60% Cabernet Franc and 40% Merlot<br>
+    Wine Style: Red – Bold and Structured<br>
+    Alcohol %: 14.1%<br>
+    Food Suggestion: Beef and Venison<br>
+    Provenance (Old/New World): New World<br>
+    Bottle Size: 750 ml<br><br>
+</p>
+<a href="/ " class="btn btn-primary"> Back to Home</a><br><br>
+</div>
+{% endblock %}

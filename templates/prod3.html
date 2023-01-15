@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <style>p.indent{ padding-left: 25.8em }</style>
+
+<div style="background-color: white" class="text-dark">
+    <h5 align="right"><a href={% url 'prod' %}><i class="fa fa-backward"> Back</i></a> </h5>
+<br><br>
+    <img src="{% static "images/w3.jpg"%}" width="120" height="270" class="mx-auto d-block "><br>
+<hr size="5" class="text-bg-dark text-center" width="100%"  >
+<p class="indent" >
+    <b>Moet & Chandon Imperial Brut</b><br>
+    ฿3,450.00
+<br><br><br>
+    Champagne Moet & Chandon แชมเปญขวดนี้ ทำให้นึกถึง ฟองที่เพิ่มขึ้นอย่างช้าๆเวลารินใส่แก้ว, <br>
+    จะสัมผัสได้ถึง กลิ่นของแอปเปิ้ล, ลูกแพร์, ลูกพีชสีเหลือง, <br>
+    น้ำผึ้งและความซับซ้อนของดอกไม้พร้อมกับกลิ่นอันหรูหรา ของขนมปังอบใหม่และถั่วสด<br>
+<br>
+    Aromas of citrus, flowers, hazlenut and smoke. On the palate a lighter <br>
+    more delicate style of champagne. Quite minerally/chalky with citrus <br>
+    and soda water flavours. Not sweet either. Fine persistent bead. <br>
+    Well balanced with nothing out of place. Dry minerally finish. <br>
+    Very easy to drink. An excellent standing up champagne<br>
+<br>
+    Country: Champagne, France<br>
+    Sub Region: Champagne<br>
+    Vintage: NV<br>
+    Colour: Yellow<br>
+    Varietal: Pinot Noir Chardonnay<br>
+    Wine Style: Sparkling<br>
+    Alcohol %: 12%<br>
+    Food Suggestion: Shellfish, Crab and Lobster<br>
+    Provenance (Old/New World): Old World<br>
+    Bottle Size: 750 ml<br><br>
+</p>
+<a href="/ " class="btn btn-primary"> Back to Home</a><br><br>
+</div>
+{% endblock %}

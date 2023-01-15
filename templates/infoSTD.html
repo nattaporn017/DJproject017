@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="row">
+    <div class=" text-dark " style="background-color: pink">
+
+<br>
+        <h5 align = 'right' ><a href="/ "><i class="fa fa-home"> Home</i></a> </h5>
+<br>
+        <div class="row">
+            <h2 class="text-center display-3" style="background-color: lightyellow">&#127774;<b><u>ข้อมูลประวัติส่วนตัว</u></b>&#127891;</h2>
+        </div>
+<br><br>
+        <img src="{% static "images/sMe.jpg" %}" width="140" height="165"class="mx-auto d-block img-thumbnail img-fluid">
+<br>
+        <div class="row " >
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col bg-white">
+                <br>ชื่อ : ณัฐพร<br>
+                นามสกุล : บุญมาหล้า<br>
+                ชื่อเล่น : น้ำฝน<br>
+                เกิด : 30 เม.ย 44<br>
+                อายุ : 22 ปี<br>
+                กรุ๊ปเลือด : A<br>
+                เชื้อชาติ : ไทย<br>
+                สัญชาติ : ไทย<br>
+                ศาสนา : พุทธ<br><br>
+            </div>
+            <div class="col bg-white"></div>
+            <div class="col bg-white">
+                <br>Name : Nattaporn<br>
+                Surname : Boonmala<br>
+                Nickname : Namfon<br>
+                Born : April 30, 2001<br>
+                Age : 22 years old<br>
+                Blood : A<br>
+                race : Thai<br>
+                nationality : Thai<br>
+                religion : Buddhism<br>
+            </div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+<br><br>
+        </div>
+<br><br><br><br><br><br><br>
+        <div style="background-color: pink"></div>
+
+    </div>
+</div>
+{% endblock %}

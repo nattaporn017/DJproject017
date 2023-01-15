@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="row">
+    <div class=" text-dark " style="background-color: sandybrown">
+
+<br>
+        <h5 align="right"><a href="/ "><i class="fa fa-home"> Home</i></a> </h5>
+<br>
+        <div class="row">
+            <h2 class="text-center display-3" style="background-color: lightyellow"  >&#127774;<b><u> My Fovorites </u></b>&#127774;</h2>
+<br><br>
+        </div>
+
+        <div class="row ">
+            <div class="col-lg-2">
+                <h2 class="display-9 text-center" ><b> Movie &#9196;</b></h2>
+                <img src="{% static "images/mv1.jpg"%}" width="200" height="150" class="mx-auto d-block img-thumbnail img-fluid"><br>
+                <img src="{% static "images/mv2.jpeg"%}" width="200" height="150" class="mx-auto d-block img-thumbnail img-fluid"><br>
+            </div>
+
+            <div class="col-lg-4">
+<br><br><br><br><br><br><br>
+                <h2 class="display-9 " >: The Amazing Spider-Man 2</h2>
+<br><br><br><br><br><br><br><br><br><br><br>
+                <h2 class="display-9 " >: AQUAMAN</h2>
+            </div>
+
+            <div class="col-lg-4 text-center"style="background-color: lightyellow">
+                <h2 class="display-9 "  ><b> Hobby &#9196; </b></h2>
+                <p>My hobby is Taking pictures.</p>
+                <img src="{% static "images/me3.jpg"%}" width="200" height="150" class="mx-auto d-block img-thumbnail img-fluid">
+<br>
+                <h2 class="display-9 "  ><b> Subject &#9196; </b></h2>
+                <img src="{% static "images/math.jpg"%}" width="320" height="270" class="mx-auto d-block img-thumbnail img-fluid"><br>
+            </div>
+        </div>
+
+</div>
+</div>
+{% endblock %}

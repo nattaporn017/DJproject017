@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <link type="text/css" rel="stylesheet" href="{% static 'stylesheet/bootstrap5/css/bootstrap.css' %}">
+    <link type="text/css" rel="stylesheet"  href="{% static 'fontawesome5/css/all.css' %}">
+    <script src='{% static 'stylesheet/bootstrap5/js/bootstrap.js' %}'></script>
+    <meta charset="UTF-8">
+    <title>header</title>
+</head>
+<body>
+<div class="row">
+{#    <div class="col-lg-2 " style="background-image: -moz-image-rect({% static 'images/eduLogo.png' %})" >#}
+    <div class="col-lg-2 " style="background-color: #fd7e14" >
+        <img src="{% static 'images/eduLogo.png' %}" class="rounded-square" width="150px" height="150px">
+    </div>
+    <div class="col-lg-10" style="background-color: #fd7e14" >
+        <img src="{% static 'images/head__2_-removebg-preview.png' %}" class="rounded-square" >
+
+    </div>
+</div>
+</body>
+</html>
