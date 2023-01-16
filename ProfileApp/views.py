@@ -27,6 +27,24 @@ def prod8(request):
     return render(request,'prod8.html')
 def idol(request):
     return render(request,'idol.html')
+def showMydata(request):
+    name="Nattaporn"
+    surname="Boonmala"
+    gender="women"
+    status="student"
+    work="RMUTI"
+    education="BIS"
+    context = {'name':name, 'surname':surname, 'gender':gender, 'status':status, 'work':work, 'education':education}
+    return render(request, 'showMydata.html',context)
+    # return render(request, 'showMydata.html',
+    # {'name':name, 'surname':surname, 'gender':gender, 'status':status, 'work':work, 'education':education})
+
+
+
+
+
+
+
 # def head(request):
 #     return render(request,'header.html')
 # def menu(request):

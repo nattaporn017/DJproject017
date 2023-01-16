@@ -16,6 +16,7 @@ urlpatterns = [
     path('prod7', views.prod7, name = 'prod7'),
     path('prod8', views.prod8, name = 'prod8'),
     path('idol', views.idol, name = 'idol'),
+    path('show', views.showMydata, name = 'show'),
     # path('head', views.head, name = 'head'),
     # path('menu', views.menu, name = 'menu'),
     # path('base', views.base, name = 'base'),
