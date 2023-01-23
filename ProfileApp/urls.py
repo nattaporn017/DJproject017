@@ -17,6 +17,12 @@ urlpatterns = [
     path('prod8', views.prod8, name = 'prod8'),
     path('idol', views.idol, name = 'idol'),
     path('showdatas', views.datas, name = 'showdatas'),
+
+    # path('showOur', views.showProducts, name = 'showOur'),
+    # path('newProduct', views.newProduct, name = 'newProduct'),
+    # path('frmProduct', views.frmProduct, name = 'frmProduct'),
+
+
     # path('head', views.head, name = 'head'),
     # path('menu', views.menu, name = 'menu'),
     # path('base', views.base, name = 'base'),

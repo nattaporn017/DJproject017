@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <br>
+    <h5 align="right"><a href={% url 'home' %}><i class="fa fa-home"> Home</i></a> </h5>
+    <br>
+
+    <h1 class="text-center text-danger bg-white"> Our Products for sale </h1>
+    <table class="table table-info ">
+    <tr align="center">
+        <th> Product ID</th>
+        <th> Product Name</th>
+        <th> Product Brand</th>
+        <th> Price</th>
+        <th> Net</th>
+    </tr>
+    {% for product in products %}
+        <tr align="center">
+            <td>{{ product.id }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.brand }}</td>
+            <td class="bg-warning">{{ product.price }}</td>
+            <td>{{ product.net }}</td>
+        </tr>
+
+    {% endfor %}
+    </table>
+
+
+
+
+{% endblock %}

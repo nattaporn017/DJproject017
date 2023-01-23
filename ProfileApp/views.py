@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,HttpResponse,redirect
 
 # Create your views here.
 def info(request):
@@ -54,6 +54,56 @@ def datas(request):
                'homeland': homeland, 'weight': weight, 'color': color,
                'job': job, 'idStd': idStd, 'address': address, 'height': height, 'food': food, 'lists':prolist}
     return render(request, 'datas.html',context)
+
+# from ProfileApp.models import *
+# productslist=[]
+# def showProducts(request):
+#     # products = Product('P001','Moues','Acer',500.00,120)
+#     # productslist.append(products)
+#     # products = Product('P002', 'Case', 'HP', 1500.00, 100)
+#     # productslist.append(products)
+#     # products = Product('P003', 'Notebook', 'Acer', 18000.00, 80)
+#     # productslist.append(products)
+#     # products = Product('P004', 'Notebook', 'Asus', 20000.00, 65)
+#     # productslist.append(products)
+#     context = {'products':productslist}
+#     return render(request,'showOurProducts.html',context)
+#
+# # def newProduct(request):
+# #     if request.method == 'POST': #ซับมิทข้อมูลมาจากฟอร์ม
+# #         id = request.POST['id']#อ่านค่า
+# #         name = request.POST['name']
+# #         brand = request.POST['brand']
+# #         price = request.POST['price']
+# #         net = request.POST['net']
+# #         product = Product(id,name,brand,price,net)
+# #         productslist.append(product)
+# #         return redirect('showOur')
+# #     else:
+# #         return render(request,'frmProductNormal.html')
+#
+#
+#
+# from ProfileApp.forms import *
+# def frmProduct(request):
+#     if request.method == 'POST': #ซับมิทข้อมูลมาจากฟอร์ม
+#         form = ProductFrom(request.POST)
+#         if form.is_valid():
+#             form = form.cleaned_data
+#             id = form.get('id')
+#             name = form.get('name')
+#             brand = form.get('brand')
+#             price = form.get('price')
+#             net = form.get('net')
+#             product = Product(id, name, brand, price, net)
+#             productslist.append(product)
+#             return redirect('showOur')
+#     else:
+#         form = ProductFrom()
+#         context ={'form':form}
+#         return render(request,'frmProduct.html',context)
+
+
 
 # def datasPro(request):
 #     prolist=["นมหมีรสชาเขียว","นมหมีรสงาขาว","นมหมีรสไวท์มอล์","นมหมีรสเชอร์รี่","นมหมีรสโกจิเบอร์รี่",
