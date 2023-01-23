@@ -1,42 +1,42 @@
 {% load static %}
 <br>
 
-<ul class="nav nav-tabs" style="background-color: white" >
+<ul class="nav nav-tabs"  >
 
   <li class="nav-item">
     <a class="nav-link active" href="/ "><i class="fa fa-home"> HOME </i></a>
   </li>
 
   <li class="nav-item">
-    <a class="nav-link active" href="{% url 'info' %}"> ข้อมูลส่วนตัว </a>
+    <a class="nav-link active" href="{% url 'info' %}"><i class="fa fa-user-graduate"> ข้อมูลส่วนตัว </i></a>
   </li>
 
   <li class="nav-item">
-    <a class="nav-link active" href="{% url 'edu' %}"> ประวัติการศึกษา </a>
+    <a class="nav-link active" href="{% url 'edu' %}"><i class="fa fa-book-open"> ประวัติการศึกษา </i></a>
   </li>
 
   <li class="nav-item">
-    <a class="nav-link active" href="{% url 'fav' %}"> สิ่งที่สนใจ </a>
+    <a class="nav-link active" href="{% url 'fav' %}"><i class="fa fa-star"> สิ่งที่สนใจ </i> </a>
   </li>
 
     <li class="nav-item">
-    <a class="nav-link active" href="{% url 'prod' %}"> สินค้านำเสนอ </a>
+    <a class="nav-link active" href="{% url 'prod' %}"><i class="fa fa-wine-glass-alt"> สินค้านำเสนอ</i></a>
   </li>
 
         <li class="nav-item">
-    <a class="nav-link active" href="{% url 'idol' %}"> บุคคลต้นแบบ </a>
+    <a class="nav-link active" href="{% url 'idol' %}"><i class="fa fa-user">  บุคคลต้นแบบ </i></a>
   </li>
 
         <li class="nav-item">
-    <a class="nav-link active" href="{% url 'show' %}"> Show Data </a>
+    <a class="nav-link active" href="{% url 'showdatas' %}"><i class="fa fa-smile">  Datas </i></a>
   </li>
+
+
 
 
   <li class="nav-item">
     <a class="nav-link disabled" href="/#"></a>
   </li>
-
-
-
 </ul>
+
 

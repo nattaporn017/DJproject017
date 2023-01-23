@@ -27,17 +27,38 @@ def prod8(request):
     return render(request,'prod8.html')
 def idol(request):
     return render(request,'idol.html')
-def showMydata(request):
+
+def datas(request):
     name="Nattaporn"
     surname="Boonmala"
-    gender="women"
-    status="student"
-    work="RMUTI"
-    education="BIS"
-    context = {'name':name, 'surname':surname, 'gender':gender, 'status':status, 'work':work, 'education':education}
-    return render(request, 'showMydata.html',context)
-    # return render(request, 'showMydata.html',
-    # {'name':name, 'surname':surname, 'gender':gender, 'status':status, 'work':work, 'education':education})
+    gender="Women"
+    homeland="Chonbure"
+    weight="46"
+    color="Pink"
+    job= "Cashier"
+    idStd= " 65342310017-1"
+    address= "Khonkaen"
+    height= "154"
+    food= "Salad"
+    prolist = [["นมหมีรสชาเขียว", "18.00", 'images/milk1.jpg'],
+                          ["นมหมีรสงาขาว", "18.00", 'images/milk2.jpg'],
+                          ["นมหมีรสไวท์มอล", "18.00", 'images/milk3.jpg'],
+                          ["นมหมีรสเชอร์รี่", "18.00", 'images/milk4.jpg'],
+                          ["นมหมีรสโกจิเบอร์รี่", "18.00", 'images/milk5.jpg'],
+                          ["นมหมี Hight folate", "15.00", 'images/milk6.jpg'],
+                          ["นมหมีรส Low Fa", "15.00", 'images/milk7.jpg'],
+                          ["นมหมีรส 0% Fat", "15.00", 'images/milk8.jpg'],
+                          ["นมหมีรสออริจินัล", "15.00", 'images/milk9.jpg'],
+                          ["นมหมีรสจืด", "76.00", 'images/milk10.jpg'],]
+    context = {'name': name, 'surname': surname, 'gender': gender,
+               'homeland': homeland, 'weight': weight, 'color': color,
+               'job': job, 'idStd': idStd, 'address': address, 'height': height, 'food': food, 'lists':prolist}
+    return render(request, 'datas.html',context)
+
+# def datasPro(request):
+#     prolist=["นมหมีรสชาเขียว","นมหมีรสงาขาว","นมหมีรสไวท์มอล์","นมหมีรสเชอร์รี่","นมหมีรสโกจิเบอร์รี่",
+#              "นมหมี Hight folate","นมหมีรส Low Fat","นมหมีรส 0% Fat","นมหมีรสออริจินัล","นมหมีรสจืด",]
+#     return render(request, 'datas.html',prolist)
 
 
 

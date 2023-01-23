@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="row" style="background-image: url({% static "images/wall12.jpg" %});
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;">
+
+        <h5 class="text-white" align='right'><a href="/ "><br><i class="fa fa-home"> Home</i></a></h5>
+        <br>
+        <h1 class="text-center text-danger" font style="font-family: Comic Sans MS" ;><br>My Infomation</h1>
+        <H2 class="text-center text-primary" font style="font-family: Comic Sans MS" ;>
+            I'm {{ name }} {{ surname }} <br>
+        </H2>
+        <h1 class="text-center">&#128221;</h1>
+
+
+        <div class="col-lg-3 text-center"></div>
+        <div class="col-lg-3 bg-white">
+            <br>
+            <table class="table-striped table-hover table-info tex " font style="font-family: Comic Sans MS" ;>
+                <tr>
+                    <td align='right'>ID Student :</td>
+                    <td>&emsp;{{ idStd }}</td>
+                </tr>
+                <tr>
+                    <td align='right'>Address :</td>
+                    <td>&emsp;{{ address }}</td>
+                </tr>
+                <tr>
+                    <td align='right'>Gender :</td>
+                    <td>&emsp;{{ gender }}</td>
+                </tr>
+                <tr>
+                    <td align='right'>height :</td>
+                    <td>&emsp;{{ height }} cm.</td>
+                </tr>
+                <tr>
+                    <td align='right'>Food :</td>
+                    <td>&emsp;{{ food }}</td>
+                </tr>
+
+
+            </table><br>
+        </div>
+        <div class="col-lg-3 bg-white">
+            <br>
+            <table class="table-striped table-hover table-info tex " font style="font-family: Comic Sans MS" ;>
+                <tr>
+
+                    <td align='right'>Name-Surname :</td>
+                    <td>&emsp;{{ name }}&ensp;{{ surname }}</td>
+                </tr>
+                <tr>
+                    <td align='right'>homeland :</td>
+                    <td>&emsp;{{ homeland }}</td>
+                </tr>
+                <tr>
+                    <td align='right'>weight :</td>
+                    <td>&emsp;{{ weight }} kg.</td>
+                </tr>
+                <tr>
+                    <td align='right'>Color :</td>
+                    <td>&emsp;{{ color }}</td>
+                </tr>
+                <tr>
+                    <td align='right'>Job :</td>
+                    <td>&emsp;{{ job }}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-lg-3 text-center"></div></div>
+    </div>
+
+    </div>
+    <div class="row" style="background-image: url({% static "images/wall12.jpg" %});
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;"><br><br>
+
+        <table class="table table-warning table-stripd  table-hover  table-bordered">
+        <tr class="table table-danger" align="center">#}
+                <th width="40%">Product</th>
+                <th width="20%">Price</th>
+                <th width="40%">Pictures</th>
+            </tr>
+        <tbody>
+        {% for list in lists %}
+            <tr>
+                <td class="bg-white" align="center">{{ list.0 }}</td>
+                <td align="center">{{ list.1 }}</td>
+                <td class="bg-white" align="center"><img src="{% static list.2 %}"class="max-width: 100%; height: 80px ;" style="width: 100px" ></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+
+{#        <table class="table table-warning table-stripd  table-hover  table-bordered" >#}
+{#            <tr class="table table-danger" align="center">#}
+{#                <th width="40%">Product</th>#}
+{#                <th width="20%">Price</th>#}
+{#                <th width="40%">Pictures</th>#}
+{#            </tr>#}
+{#            <tr bgcolor="#dcdcdc">#}
+{#            <td align="center"> </td>#}
+{#                <td>   </td>#}
+{#                <td align="center">  </td>#}
+{##}
+{#            </tr>#}
+{#            <tr bgcolor="#dcdcdc">#}
+{#            <td align="center"> </td>#}
+{#                <td>   </td>#}
+{#                <td align="center">  </td>#}
+{##}
+{#            </tr>#}
+{#            <tr bgcolor="#dcdcdc">#}
+{#            <td align="center"> </td>#}
+{#                <td>   </td>#}
+{#                <td align="center">  </td>#}
+{##}
+{#            </tr>#}
+{#            <tr bgcolor="#dcdcdc">#}
+{#            <td align="center"> </td>#}
+{#                <td>   </td>#}
+{#                <td align="center">  </td>#}
+{##}
+{#            </tr>#}
+{#        </table>#}
+
+    </div>
+
+{% endblock %}
