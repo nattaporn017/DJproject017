@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 {% load static %}
-
-
 <head>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped&display=swap" rel="stylesheet">
     <link type="text/css" rel="stylesheet"
@@ -11,6 +9,17 @@
     <script src='{% static 'stylesheet/bt523/js/bootstrap.js' %}'></script>
     <meta charset="UTF-8">
     <title>Angel School</title>
+    <style >
+        .bg{
+            background-color: ivory;
+        }
+        .font{
+            font-family: "helvetica";
+            text-align: center;
+            {#font-size: 20px;#}
+
+        }
+    </style>
 </head>
 
 <body>
@@ -28,7 +37,8 @@
         </div>
     </div>
 
-    <div class="col-lg-12">
+    <div class="col-lg-12 " >
+
         {% block content %}
         {% endblock %}
     </div>

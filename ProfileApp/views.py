@@ -1,4 +1,5 @@
 from django.shortcuts import render,HttpResponse,redirect
+import datetime
 
 # Create your views here.
 def info(request):
@@ -54,6 +55,39 @@ def datas(request):
                'homeland': homeland, 'weight': weight, 'color': color,
                'job': job, 'idStd': idStd, 'address': address, 'height': height, 'food': food, 'lists':prolist}
     return render(request, 'datas.html',context)
+
+
+# lstOurProduct = []
+#
+# def listPro11(request):
+#     products = "Supplementary Food"
+#     name = "Nattaporn Boonmala"
+#     date = datetime.datetime.now()
+#     context = {'lstProduct': lstOurProduct,'products': products,'name': name,'date': date.strftime("%A %d-%m-%Y %H : %M")}
+#     return render(request, 'listPro11.html', context)
+#
+# from ProfileApp.forms import *
+# def inputPro11(request):
+#     if request.method == 'POST':
+#         form = ProductForm(request.POST)
+#         if form.is_valid():
+#             name = form.cleaned_data['name']
+#             brand = form.cleaned_data['brand']
+#             type = form.cleaned_data['type']
+#             price = form.cleaned_data['price']
+#             delivery = form.cleaned_data['delivery']
+#             amount = form.cleaned_data['amount']
+#             productnew = Product(name, brand, type, price, delivery, amount)
+#             lstOurProduct.append(productnew)
+#             return redirect('listPro11')
+#         else:
+#             return redirect('pro_retrive_all')
+#     else:
+#         form = ProductForm()
+#     context = {'form': form}
+#     return render(request, 'inputPro11.html', context)
+
+
 
 # from ProfileApp.models import *
 # productslist=[]

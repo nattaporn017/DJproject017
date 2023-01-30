@@ -17,6 +17,10 @@ urlpatterns = [
     path('prod8', views.prod8, name = 'prod8'),
     path('idol', views.idol, name = 'idol'),
     path('showdatas', views.datas, name = 'showdatas'),
+    # path('listPro11', views.listPro11, name ='listPro11'),
+    # path('inputPro11', views.inputPro11, name='inputPro11'),
+
+
 
     # path('showOur', views.showProducts, name = 'showOur'),
     # path('newProduct', views.newProduct, name = 'newProduct'),

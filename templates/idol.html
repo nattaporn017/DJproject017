@@ -2,31 +2,35 @@
 {% load static %}
 {% block content %}
 
-<div class="row"style="background-image: url({% static "images/wall12.jpg" %});
+<div class="row"style="background-image: url({% static "images/wall6.jpg" %});
                 background-repeat: no-repeat;
 		        background-attachment: fixed;
 		        background-size: cover;">>>
-<div class=" text-white " font style="font-family: Comic Sans MS";
 
+    <div class=" text-white " ;>
 <br>
     <h5 align="right"><a href="/ "><i class="fa fa-home"> Home</i></a> </h5>
 <br>
     <div class="row">
     <h2 class="text-center display-3" style="background-color: darkred"  >&#129419;<b><u>บุคคลต้นแบบ</u></b>&#129419;</h2><br>
-    <h3 class="text-center "><b>โอปอล์-ปาณิสรา อารยะสกุล</b></h3>
+    <h3 class="text-center text-dark"><b>โอปอล์-ปาณิสรา อารยะสกุล</b></h3>
 <br>
     </div>
-    <img src="{% static "images/opal.jpg" %}" width="170" height="195"class="mx-auto d-block img-thumbnail img-fluid" >
-{#     <video src="{% static "images/opaltalk.mp4" %}" width="170" height="195" >#}
-<br>
+    </div>
 
-    <div class="row " >
-        <div class="col" >
+        <div class="col col-lg-4">
             <video src="{% static "images/opaltalk.mp4" %}" width="170" height="195" controls="controls"
-                   class="mx-auto d-block img-thumbnail img-fluid"loop></video>
-
+                   class="mx-auto d-block img-fluid" style="
+                 border-image: 2;border-color: darkred;border-style:double;
+                 border-style: double;border-width: 10px "loop></video>
         </div>
-        <div class="col bg-white text-bg-info">
+
+    <div class="col col-lg-4 " >
+        <img src="{% static "images/opal.jpg" %}" width="170" height="195"
+                 class="mx-auto d-block img-fluid" style="border-radius: 50%;
+                 border-image: 2;border-color: darkred;border-style:double;border-style: double;border-width: 10px " >
+<br>
+        <div class="col bg-white text-center">
 <br>
             โอปอล์-ปาณิสรา อารยะสกุล อยู่ในวงการบันเทิงมาสิบกว่าปีในฐานะคนเบื้องหลัง
             นักแสดง ดีเจ. และพิธีกร ด้านชีวิตส่วนตัวโอปอล์สมรสกับนายแพทย์สมิทธิ์ อารยะสกุล
@@ -42,11 +46,15 @@
             ควบคู่กับการทำงานในวงการ พอมีลูกปอล์เบรกงานเบื้องหน้าเพื่อที่จะได้อยู่กับลูกตลอดเวลา และลุยธุรกิจเป็นหลัก
 <br> <br>
         </div>
-        <div class="col"></div>
     </div>
-<br><br><br><br><br><br><br>
+
+    <div class="col col-lg-4"></div>
+
+
+
 
 
 </div>
+
 </div>
 {% endblock %}

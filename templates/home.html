@@ -1,61 +1,61 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<div class="row" font style="font-family: Comic Sans MS";>
-    <div class=" text-dark "
-         style="background-image: url({% static "images/wall12.jpg" %});
-                background-repeat: no-repeat;
-		        background-attachment: fixed;
-		        background-size: cover;">
-<br><br>
-        <div class="row">
+{#<br>#}
+{#<div class="row">#}
+{#    <h1 class="font"> Miss  Nattaporn Boonmala </h1>#}
+{#</div>#}
 
-        <h1 class="text-center display-3"  > <b>Public Relations</b> &#128226;</h1>
-        <p class=" text-dark text-center " >
-            <marquee direction="left">ยินดีต้อนรับ เข้าสู่ Angel School โรงเรียนที่เป็นมากกว่าโรงเรียน !!
-             เรามุ่งเน้นสร้างสรรค์ ให้นักเรียน สวย เก่ง ดี มีความรู้รอบตัว และมีเงินใช้<br>
-            </marquee>
-        </p>
+<div class="row " >
+        <div class="col col-lg-3"></div>
+        <div class="col col-lg-6">
+{#            <br>#}
+            <!-- Carousel -->
+            <div id="demo" class="carousel slide" data-bs-ride="carousel">
+                <!-- Indicators/dots -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                </div>
+                <!-- The slideshow/carousel -->
+                <div class="carousel-inner ">
+                    <div class="carousel-item active">
+                        <img src="{% static "images/pr1.png" %}" alt="PR1" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static "images/pr2.png" %}" alt="PR2" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static "images/pr3.png" %}" alt="PR2" class="d-block w-100">
+                    </div>
+                </div>
+                <!-- Left and right controls/icons -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+{#                <br><br>#}
+            </div>
         </div>
 
+        <div class="col col-lg-3 "></div>
+</div>
+
+<div class=" row " style="background-color: #41464b;">
+    <p class="font text-white" style="font-size: 20px" >
 <br>
-        <div class="text-center">
-        <div class="spinner-border text-dark"></div>
-        <div class="spinner-border text-light"></div>
-        <div class="spinner-border text-dark"></div>
-        <div class="spinner-border text-light"></div>
-        <div class="spinner-border text-dark"></div>
-        <div class="spinner-border text-light"></div>
-        <div class="spinner-border text-dark"></div>
-        <div class="spinner-border text-light"></div>
-        <div class="spinner-border text-dark"></div>
-        <div class="spinner-border text-light"></div>
-        <div class="spinner-border text-dark"></div>
-        <div class="spinner-border text-light"></div>
-        <div class="spinner-border text-dark"></div>
-        <div class="spinner-border text-light"></div>
-        <div class="spinner-border text-dark"></div>
-        <div class="spinner-border text-light"></div>
-        <div class="spinner-border text-dark"></div>
-        <div class="spinner-border text-light"></div>
-        <div class="spinner-border text-dark"></div>
-        <div class="spinner-border text-light"></div>
-        <div class="spinner-border text-dark"></div>
-        <div class="spinner-border text-light"></div>
-        <div class="spinner-border text-dark"></div>
-        <div class="spinner-border text-light"></div>
-        <div class="spinner-border text-dark"></div>
-        <div class="spinner-border text-light"></div>
-<br><br>
-        <img src="{% static "images/166.png" %}" width="1000" height="700"class="mx-auto d-block img-fluid" class="rounded" >
-        <br>
+        <u>My name is Nattaporn Boonmala</u>
+<br>
+        ( Faculty of Business Administration and Information Technology,
+<br>
+        Rajamangala University of Technology Isan )
+<br><br><br><br>
+        <i class=" fa fa-envelope "style="font-size: 15px"> email: nattaporn.bn@rmuti.ac.th</i>
 
-        </div>
-        <br><br><br>
+    </p>
 
-    </div>
-{#        <div align="center">#}
-{#            <font style="font-family: Comic Sans MS";>Waaaaaa</font>#}
-{#        </div>#}
 </div>
 {% endblock %}

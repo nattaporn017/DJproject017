@@ -1,50 +1,39 @@
 {% load static %}
-<br>
-
-<ul class="nav nav-tabs"  >
-
-  <li class="nav-item">
-    <a class="nav-link active" href="/ "><i class="fa fa-home"> HOME </i></a>
-  </li>
-
-  <li class="nav-item">
-    <a class="nav-link active" href="{% url 'info' %}"><i class="fa fa-user-graduate"> ข้อมูลส่วนตัว </i></a>
-  </li>
-
-  <li class="nav-item">
-    <a class="nav-link active" href="{% url 'edu' %}"><i class="fa fa-book-open"> ประวัติการศึกษา </i></a>
-  </li>
-
-  <li class="nav-item">
-    <a class="nav-link active" href="{% url 'fav' %}"><i class="fa fa-star"> สิ่งที่สนใจ </i> </a>
-  </li>
-
-    <li class="nav-item">
-    <a class="nav-link active" href="{% url 'prod' %}"><i class="fa fa-wine-glass-alt"> สินค้านำเสนอ</i></a>
-  </li>
-
+<div class="row">
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/ "><i class="fa fa-home"></i></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <ul class="navbar-nav me-auto">
         <li class="nav-item">
-    <a class="nav-link active" href="{% url 'idol' %}"><i class="fa fa-user">  บุคคลต้นแบบ </i></a>
-  </li>
-
+          <a class="nav-link" href="{% url 'info' %}">Profile</a>
+        </li>
         <li class="nav-item">
-    <a class="nav-link active" href="{% url 'showdatas' %}"><i class="fa fa-smile">  Datas </i></a>
-  </li>
-
-{#    <li class="nav-item">#}
-{#    <a class="nav-link active" href="{% url 'showOur' %}"><i class="fa fa-smile">  Our Products </i></a>#}
-{#  </li>#}
-{##}
-{#        <li class="nav-item">#}
-{#    <a class="nav-link active" href="{% url 'frmProduct' %}"><i class="fa fa-smile">  frm Add Products </i></a>#}
-{#  </li>#}
-
-
-
-
-  <li class="nav-item">
-    <a class="nav-link disabled" href="/#"></a>
-  </li>
-</ul>
+          <a class="nav-link" href="{% url 'edu' %}">EDU</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'fav' %}">Favorites</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="{% url 'prod' %}">Product</a>
+        </li>
+            <li class="nav-item">
+          <a class="nav-link" href="{% url 'idol' %}">Idol</a>
+        </li>
+            <li class="nav-item">
+          <a class="nav-link" href="{% url 'showdatas' %}">Datas</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="text" placeholder="Search">
+        <button class="btn btn-primary" type="button">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+</div>
 
 
