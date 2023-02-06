@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% load humanize %}
+    {% load static %}
+<div class="row  text-center" style="font-family: Comic Sans MS;background-color: #565e64">
+
+    <div class="col-lg-12"><br>
+    <img src="{% static "images/namfonTH.jpg" %}" width="500" height="800" class="mx-auto d-block img-fluid">
+    </div>
+<br>
+
+    <div class="row text-white ">
+    <div class="col-lg-5"></div>
+
+    <div class="col-lg-2 bg-secondary"><h3><u>Practice 11</u></h3></div>
+
+    <div class="col-lg-5"></div>
+    </div>
+
+    <div class="row text-center">
+        <div class="text-dark" style="font-family: Comic Sans MS; font-size: 18px" >
+            <br>
+          <b>
+              <p>Type Product: {{ details }}</p>
+              <p>Admin: {{ name }}</p>
+              <p>Date: {{ date }}</p>
+              <br>
+
+              <br>
+            </b>
+        </div>
+    </div>
+</div>
+    <div class="text-center" style="background-color: #dee2e6">
+    <br>
+        <a href={% url 'inputProduct' %}>
+            <button class="btn btn-primary">
+                Add Product <i class=" fa fa-plus"></i>
+            </button>
+        </a>
+
+    </div>
+    <div class="row " style="background-color: #dee2e6">
+
+    <div class="col-lg-1"></div>
+    <div class="col-lg-10" style="font-family: Comic Sans MS;">
+    <br>
+           <table class="table table-success table-hover table-striped table-bordered text-center">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Pattern</th>
+            <th>Color</th>
+            <th>Price</th>
+            <th>Amount</th>
+            <th>Delivery</th>
+            <th>Total</th>
+            <th>Discount</th>
+            <th>Net</th>
+        </tr>
+        {% for listproduct in lstProduct %}
+        <tr>
+        <td>{{ listproduct.getId }}</td>
+            <td>{{ listproduct.getName }}</td>
+            <td>{{ listproduct.getPattern }}</td>
+            <td>{{ listproduct.getColor }}</td>
+            <td>{{ listproduct.getPrice|intcomma }}</td>
+            <td>{{ listproduct.getAmount }}</td>
+            <td>{{ listproduct.getDelivery }}</td>
+            <td>{{ listproduct.getTotal|floatformat  }}</td>
+            <td>{{ listproduct.getDiscount|floatformat  }}</td>
+            <td>{{ listproduct.getNet|intcomma }} Baht</td>
+        </tr>
+        {% endfor %}
+           </table>
+    </div>
+    <div class="col-lg-1"></div>
+
+    </div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<br>
+<div class="offcanvas offcanvas-start " id="demo">
+  <div class="offcanvas-header">
+    <h1 class="offcanvas-title">Assignment 12</h1>
+    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body" style="font-size: 18px">
+      <a class="nav-link" href="{% url 'showGoodsList' %}"><i class="fa fa-search"> : </i> <u>Show Goods List</u></a>
+      <br>
+      <a class="nav-link" href="{% url 'showCustomerList' %}"><i class="fa fa-search"> : </i> <u>Show Customer List</u></a>
+
+  </div>
+</div>
+
+<div class="container-fluid mt-3">
+  <h3>คลิกด้านล่าง เพื่อเปิด Assignment 12 ...</h3>
+  <p>นางสาว ณัฐพร บุญมาหล้า 017 </p>
+
+  <button class="btn btn-success" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
+    Open Assignment 12
+  </button>
+</div>
+
+
+{% endblock %}

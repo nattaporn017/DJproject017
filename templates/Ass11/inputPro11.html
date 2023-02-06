@@ -1,0 +1,35 @@
+{%  extends 'base.html' %}
+{% block content %}
+    {% load static %}
+    {% load humanize %}
+<div class="row" style="background-color: #dee2e6">
+<br>
+    <h5 align="right"><a href={% url 'home' %}><i class="fa fa-home"> Home</i></a> </h5>
+<br>
+<div class="text-center" style="font-family: Comic Sans MS; font-size:16px;">
+<br>
+    <div >
+        <h2> <u>Input Product</u></h2>
+    </div>
+</div>
+
+    <div class="row" style="font-family: Comic Sans MS;font-weight: bold;">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4 ">
+    <form method="post" class="form form-control">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="text-center">
+        <input type="submit" value="Save" class="btn btn-success">
+        <input type="reset" value="Reset" class="btn btn-danger">
+        <br>
+    </div>
+    </form>
+    </div>
+    <div class="col-lg-4"></div>
+    </div>
+
+
+</div>
+
+{% endblock %}

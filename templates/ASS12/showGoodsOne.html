@@ -1,0 +1,32 @@
+{%  extends 'base.html' %}
+{% block content %}
+    {% load static %}
+    {% load humanize %}
+<div style="background-color: #dee2e6">
+    <br>
+    <h5 class="text-white" align='right'><a href="/ "><br><i class="fa fa-home"> Home</i></a></h5>
+    <br>
+<div class="row  text-center" style="font-family: Comic Sans MS; ">
+    <h1 class="text-center text-dark bg-white"> Show One Goods </h1>
+    <br>
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6">
+    <table class="table table-success table-striped " style="font-size: 20px"><br>
+        <tr><td align="right">ID : </td><td align="left">{{goods.gid}}</td></tr>
+        <tr><td align="right">Name : </td><td align="left">{{goods.name}}</td></tr>
+        <tr><td align="right">Brand : </td><td align="left">{{goods.brand}}</td></tr>
+        <tr><td align="right">Model : </td><td align="left">{{goods.model}}</td></tr>
+        <tr><td align="right">Price : </td><td align="left">{{goods.price}}</td></tr>
+        <tr><td align="right">Net : </td><td align="left">{{goods.net}}</td></tr>
+        <tr><td align="right">Property : </td><td align="left">{{goods.property}}</td></tr>
+    </table>
+        <a onclick="history.back();" class="btn btn-warning">
+        <i class="fas fa-backward"></i> Back
+        </a>
+    <div class="col-lg-3"></div>
+        <br><br><br>
+</div>
+
+</div>
+ </div>
+{% endblock %}

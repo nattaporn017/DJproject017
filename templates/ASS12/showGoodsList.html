@@ -1,0 +1,63 @@
+{%  extends 'base.html' %}
+{% block content %}
+    {% load static %}
+    {% load humanize %}
+<div class="row  text-center" style="font-family: Comic Sans MS;background-color: #565e64">
+<br>
+    <div class="row text-white ">
+    <div class="col-lg-5"></div>
+
+    <div class="col-lg-2 bg-secondary"><h3><u>Practice 12</u></h3></div>
+        <br>
+        <h2> Show Goods List </h2>
+
+    <div class="col-lg-5"></div>
+    </div>
+</div><br>
+    <div class="row " style="background-color: #dee2e6">
+    <div class="col-lg-1"></div>
+    <div class="col-lg-10" style="font-family: Comic Sans MS;">
+    <br>
+           <table class="table table-success table-hover table-striped table-bordered text-center">
+        <tr>
+            <th>ID</th>
+            <th>Goods</th>
+            <th>Brand</th>
+            <th>Model</th>
+            <th>Price</th>
+            <th>Net</th>
+            <th>Category</th>
+            <th>
+{#            <a href="{% url 'newGoods' %}">#}
+               <button class="btn btn-success">
+                Add Product <i class=" fa fa-plus"></i>
+            </button>
+            </th>
+{#             </a>#}
+        </tr>
+        {% for goods in result  %}
+        <tr>
+        <td>{{ goods.gid }}</td>
+        <td>{{ goods.name }}</td>
+        <td>{{ goods.brand}}</td>
+        <td>{{ goods.model}}</td>
+        <td>{{ goods.price|intcomma}} Baht </td>
+        <td>{{ goods.net}}</td>
+        <td>{{ goods.goodscategory12.gc_name }}</td>
+        <td>
+            <a href="{% url 'showGoodsOne' goods.gid %}">
+                <i class="fa fa-search"></i>
+             </a>
+{#            <a href="{% url 'goodsUpdate' goods.gid %}">#}
+{#                <i class="fa fa-edit"></i>#}
+{#             </a>#}
+{#            <a href="{% url 'goodsDel' goods.gid %}" onclick="return confirm('Are you sure you want to delete this item?');">#}
+{#                <i class="fa fa-delete-left"></i>#}
+{#             </a>#}
+        </td>
+        </tr>
+    {% endfor %}
+           </table>
+    </div>
+    <div class="col-lg-1"></div></div>
+{% endblock %}

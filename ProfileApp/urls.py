@@ -16,11 +16,16 @@ urlpatterns = [
     path('prod7', views.prod7, name = 'prod7'),
     path('prod8', views.prod8, name = 'prod8'),
     path('idol', views.idol, name = 'idol'),
+    path('ass12', views.ass12, name = 'ass12'),
     path('showdatas', views.datas, name = 'showdatas'),
-    # path('listPro11', views.listPro11, name ='listPro11'),
-    # path('inputPro11', views.inputPro11, name='inputPro11'),
+    path('listProduct', views.listProduct, name ='listProduct'),
+    path('inputProduct', views.inputProduct, name='inputProduct'),
 
+    path('retrieveAllProduct', views.retrieveAllProduct, name = 'retrieveAllProduct'),
+    path('<pid>/retivevOneProduct', views.retivevOneProduct,name = 'retivevOneProduct'),
 
+    path('createProduct', views.createProduct, name = 'createProduct'),
+    # path('emp_create', views.emp_create, name='emp_create'),
 
     # path('showOur', views.showProducts, name = 'showOur'),
     # path('newProduct', views.newProduct, name = 'newProduct'),
@@ -30,4 +35,8 @@ urlpatterns = [
     # path('head', views.head, name = 'head'),
     # path('menu', views.menu, name = 'menu'),
     # path('base', views.base, name = 'base'),
+    path('showGoodsList', views.showGoodsList, name='showGoodsList'),
+    path('<gid>/showGoodsOne', views.showGoodsOne, name='showGoodsOne'),
+    path('showCustomerList', views.showCustomerList, name='showCustomerList'),
+    path('<cid>/showCustomerOne', views.showCustomerOne, name='showCustomerOne'),
 ]

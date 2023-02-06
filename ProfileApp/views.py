@@ -1,6 +1,7 @@
 from django.shortcuts import render,HttpResponse,redirect
 import datetime
 
+
 # Create your views here.
 def info(request):
     return render(request,'infoSTD.html')
@@ -28,7 +29,8 @@ def prod8(request):
     return render(request,'prod8.html')
 def idol(request):
     return render(request,'idol.html')
-
+def ass12(request):
+    return render(request,'ASS12/Assignment12.html')
 def datas(request):
     name="Nattaporn"
     surname="Boonmala"
@@ -57,102 +59,83 @@ def datas(request):
     return render(request, 'datas.html',context)
 
 
-# lstOurProduct = []
-#
-# def listPro11(request):
-#     products = "Supplementary Food"
-#     name = "Nattaporn Boonmala"
-#     date = datetime.datetime.now()
-#     context = {'lstProduct': lstOurProduct,'products': products,'name': name,'date': date.strftime("%A %d-%m-%Y %H : %M")}
-#     return render(request, 'listPro11.html', context)
-#
-# from ProfileApp.forms import *
-# def inputPro11(request):
-#     if request.method == 'POST':
-#         form = ProductForm(request.POST)
-#         if form.is_valid():
-#             name = form.cleaned_data['name']
-#             brand = form.cleaned_data['brand']
-#             type = form.cleaned_data['type']
-#             price = form.cleaned_data['price']
-#             delivery = form.cleaned_data['delivery']
-#             amount = form.cleaned_data['amount']
-#             productnew = Product(name, brand, type, price, delivery, amount)
-#             lstOurProduct.append(productnew)
-#             return redirect('listPro11')
-#         else:
-#             return redirect('pro_retrive_all')
-#     else:
-#         form = ProductForm()
-#     context = {'form': form}
-#     return render(request, 'inputPro11.html', context)
+lstOurProduct = []
+# pd1 = product("P01", "รองเท้า adidas", "White", "36", 1499, 1, True)
+# lstOurProduct.append(pd1)
+def listProduct(request):
+    details = "Wireless Headphones"
+    name = "Nattaporn Boonmala"
+    date = datetime.datetime.now()
+    return render(request, 'Ass11/listPro11.html', {'lstProduct': lstOurProduct,
+                                              'details': details, 'name': name,
+                                              'date': date.strftime("%A %d-%m-%Y %H : %M")})
+def inputProduct(request):
+    if request.method == 'POST':
+        form = ProductForm11(request.POST)
+        if form.is_valid():
+            id = form.cleaned_data['id']
+            name = form.cleaned_data['name']
+            pattern = form.cleaned_data['pattern']
+            color = form.cleaned_data['color']
+            price = form.cleaned_data['price']
+            amount = form.cleaned_data['amount']
+            delivery = form.cleaned_data['delivery']
+            productNew = product11(id, name, pattern, color, price, amount,delivery)
+            lstOurProduct.append(productNew)
+            return redirect('listProduct')
+        else:
+            return redirect('pro_retrive_all')
+    else:
+        form = ProductForm11()
+    context = {'form': form}
+    return render(request, 'Ass11/inputPro11.html', context)
 
 
+from .models import *
+from ProfileApp.forms import *
+def retrieveAllProduct(request):
+    products = Product.objects.all() #อ่ํานข้อมูลทุกเรคอร์ด All ในฐํานข้อมูลที่เชื่อมโดย Category
+    context ={'products':products}
+    return render(request, 'Product/retrieveAllProduct.html',context)
 
-# from ProfileApp.models import *
-# productslist=[]
-# def showProducts(request):
-#     # products = Product('P001','Moues','Acer',500.00,120)
-#     # productslist.append(products)
-#     # products = Product('P002', 'Case', 'HP', 1500.00, 100)
-#     # productslist.append(products)
-#     # products = Product('P003', 'Notebook', 'Acer', 18000.00, 80)
-#     # productslist.append(products)
-#     # products = Product('P004', 'Notebook', 'Asus', 20000.00, 65)
-#     # productslist.append(products)
-#     context = {'products':productslist}
-#     return render(request,'showOurProducts.html',context)
-#
-# # def newProduct(request):
-# #     if request.method == 'POST': #ซับมิทข้อมูลมาจากฟอร์ม
-# #         id = request.POST['id']#อ่านค่า
-# #         name = request.POST['name']
-# #         brand = request.POST['brand']
-# #         price = request.POST['price']
-# #         net = request.POST['net']
-# #         product = Product(id,name,brand,price,net)
-# #         productslist.append(product)
-# #         return redirect('showOur')
-# #     else:
-# #         return render(request,'frmProductNormal.html')
-#
-#
-#
-# from ProfileApp.forms import *
-# def frmProduct(request):
-#     if request.method == 'POST': #ซับมิทข้อมูลมาจากฟอร์ม
-#         form = ProductFrom(request.POST)
-#         if form.is_valid():
-#             form = form.cleaned_data
-#             id = form.get('id')
-#             name = form.get('name')
-#             brand = form.get('brand')
-#             price = form.get('price')
-#             net = form.get('net')
-#             product = Product(id, name, brand, price, net)
-#             productslist.append(product)
-#             return redirect('showOur')
-#     else:
-#         form = ProductFrom()
-#         context ={'form':form}
-#         return render(request,'frmProduct.html',context)
+def retivevOneProduct(request, pid):
+    product = Product.objects.get(pid=pid) #อ่ํานข้อมูลทุกเรคอร์ด One ในฐํานข้อมูลที่เชื่อมโดย Category
+    context ={'product':product}
+    return render(request, 'Product/retivevOneProduct.html',context)
 
+from django.contrib import messages
+def createProduct(request):
+    if request.method == 'POST':
+        form = ProductMForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.add_message(request,messages.SUCCESS,'บันทึกข้อมูลสินค้าใหม่เรียบร้อย...')
+            return redirect('retrieveAllProduct')
+        else:
+            product = Product.objects.get(pid=request.POST['pid'])
+            if product:
+                messages.add_message(request,messages.WARNING,'รหัสสินค้าซ้ำกับที่มีอยู่แล้วในระบบ')
+            messages.add_message(request, messages.WARNING,'ไม่สามารถบันทึกข้อมูลสินค้าใหม่ได้')
+    else:
+        form = ProductMForm()
+    context = {'form':form}
+    return render(request, 'Product/createProduct.html',context)
 
+def showGoodsList (request):
+    #Query
+    result = Goods12.objects.all()
+    context ={'result' : result}
+    return render(request, 'ASS12/showGoodsList.html', context)
 
-# def datasPro(request):
-#     prolist=["นมหมีรสชาเขียว","นมหมีรสงาขาว","นมหมีรสไวท์มอล์","นมหมีรสเชอร์รี่","นมหมีรสโกจิเบอร์รี่",
-#              "นมหมี Hight folate","นมหมีรส Low Fat","นมหมีรส 0% Fat","นมหมีรสออริจินัล","นมหมีรสจืด",]
-#     return render(request, 'datas.html',prolist)
-
-
-
-
-
-
-
-# def head(request):
-#     return render(request,'header.html')
-# def menu(request):
-#     return render(request,'menu.html')
-# def base(request):
-#     return render(request,'base.html')
+def showGoodsOne (request,gid):
+    goodsone_info = Goods12.objects.get(gid=gid)
+    context= {'goods': goodsone_info}
+    return render(request, 'ASS12/showGoodsOne.html', context)
+def showCustomerList (request):
+    result = Customer12.objects.all()
+    context = {'result': result }
+    return render(request, 'ASS12/showCustomerList.html', context)
+def showCustomerOne (request,cid):
+    customerone_info = Customer12.objects.get(cid=cid)
+    context={'customer':customerone_info}
+    return render(request, 'ASS12/showCustomerOne.html', context)
