@@ -14,13 +14,35 @@ class ProductForm11(forms.Form):
     amount = forms.IntegerField(min_value=0)
     delivery = forms.ChoiceField(widget=forms.RadioSelect,choices=DELIVERY_LIST)
 
-#
+##############
 class ProductMForm(forms.ModelForm):
     class Meta:
         model = Product
         fields = ('pid', 'name','brand', 'price', 'net','category')
         widgets ={
             'pid':forms.TextInput(attrs={'class':'form-control'}),
+            'name': forms.TextInput(attrs={'class': 'form-control','required':'required','max_length':35}),
+            'brand':forms.TextInput(attrs={'class':'form-control'}),
+            'price': forms.NumberInput(attrs={'class': 'form-control'}),
+            'net': forms.NumberInput(attrs={'class': 'form-control'}),
+            'category': forms.Select(attrs={'class': 'form-control'}),
+        }
+        lables ={
+            'pid':'ID',
+            'name':'name',
+            'brand': 'brand',
+            'net': 'net',
+            'category': 'category',
+            }
+        def updateMForm(self):
+            self.fields['pid'].widget.attrs['readonly']=True
+            self.fields['pid'].labels='รหัสสินค้า [ไม่อนุญาตให้แก้ไขได้]'
+class ProductUpdateMForm(forms.ModelForm):
+    class Meta:
+        model = Product
+        fields = ('pid', 'name','brand', 'price', 'net','category')
+        widgets ={
+            'pid':forms.TextInput(attrs={'class':'form-control','readonly':'readonly'}),
             'name': forms.TextInput(attrs={'class': 'form-control','required':'required','max_length':35}),
             'brand':forms.TextInput(attrs={'class':'form-control'}),
             'price': forms.NumberInput(attrs={'class': 'form-control'}),

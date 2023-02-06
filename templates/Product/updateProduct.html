@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <br>
+    <h5 align="right"><a href={% url 'home' %}><i class="fa fa-home"> Home</i></a> </h5>
+<br>
+    <h1 class="text-center text-dark bg-white"> Update Product 30/01/66 </h1>
+    <form method="post" class="form form-control">
+    {% csrf_token %}
+    {{ form.as_table }}
+    <div class="text-center">
+{#        <input type="hidden" namv="old_pid " value="{{ old_pid }}" class="btn btn-secondary">#}
+        <input type="submit" value="Save" class="btn btn-warning">
+        <input type="reset" value="Reset" class="btn btn-danger">
+
+    </div>
+    </form>
+
+
+
+{% endblock %}

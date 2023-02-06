@@ -37,6 +37,16 @@
                 <a href="{% url 'retivevOneProduct' product.pid %}">
                     <i class="fa fa-search"></i>
                 </a>
+                <a href="{% url 'updateProduct' product.pid %}" class="text-secondary">
+                    <i class="fa fa-tools"></i>
+                </a>
+                <a href="{% url 'deleteProduct' product.pid %}" class="text-secondary">
+                    <i class="fa fa-trash"></i>
+                </a>
+{#                <a href="{% url 'deleteProduct' product.pid %}" class="text-secondary"#}
+{#                onclick="return comfirm('โปรดยืนยัน {{ product.pid }}:{{ product.name }}')">#}
+{#                    <i class="fa fa-trash"></i>#}
+{#                </a>#}
             </td>
         </tr>
 

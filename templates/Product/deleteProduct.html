@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <h1 class="text-center text-dark bg-white"> Delete Product </h1>
+    <h2 class="text-center text-dark bg-white"> {{ product.pid }}:{{ product.name }} </h2>
+     <table class="table table-info ">
+         <tr>
+             <td>ID</td>
+             <td>{{ product.pid }}</td>
+         </tr>
+
+        <tr>
+             <td>name</td>
+             <td>{{ product.name }}</td>
+         </tr>
+
+        <tr>
+             <td>Brand</td>
+             <td>{{ product.brand }}</td>
+         </tr>
+        <tr>
+             <td>Price</td>
+             <td>{{ product.price }}</td>
+         </tr>
+     </table>
+    <form method="post">
+    {% csrf_token %}
+    <input type="hidden" namv="pid" value="{{ product.pid }}" >
+    <input type="submit" value="Confirm" class="btn btn-warning">
+    <input type="button" value="Back" class="btn btn-danger" onclick="history.back();">
+    </form>
+
+    </a>
+
+
+{% endblock %}

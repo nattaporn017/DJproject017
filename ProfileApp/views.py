@@ -1,4 +1,4 @@
-from django.shortcuts import render,HttpResponse,redirect
+from django.shortcuts import render,HttpResponse,redirect,get_object_or_404
 import datetime
 
 
@@ -104,6 +104,7 @@ def retivevOneProduct(request, pid):
     return render(request, 'Product/retivevOneProduct.html',context)
 
 from django.contrib import messages
+
 def createProduct(request):
     if request.method == 'POST':
         form = ProductMForm(request.POST)
@@ -120,7 +121,47 @@ def createProduct(request):
         form = ProductMForm()
     context = {'form':form}
     return render(request, 'Product/createProduct.html',context)
+def updateProduct (request,pid):
+    product = get_object_or_404(Product, pid=pid)
+    form = ProductMForm(data=request.POST or None,instance=product)
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            messages.add_message(request, messages.SUCCESS, 'แก้ไขข้อมูลสินค้าเรียบร้อย...')
+            return redirect('retrieveAllProduct')
+        else:
+            context = {'form': form}
+            messages.add_message(request, messages.WARNING, 'ไม่สามารถบันทึกข้อมูลสินค้าใหม่ได้')
+    else:
+        form.up
+        context = {'form':form}
+        # context = {'form': form, 'old_pid': product.pid}
 
+        return  render(request, 'Product/updateProduct.html',context)
+def deleteProductOld (request,pid):
+    product = get_object_or_404(Product, pid=pid)
+    if product:
+        product.delete()
+        messages.add_message(request, messages.SUCCESS, 'ลบข้อมูลสินค้าเรียบร้อย...')
+    else:
+        messages.add_message(request, messages.WARNING, 'ไม่สามารถลบข้อมูลสินค้า ตามรหัสที่ระบุได้ ')
+    return redirect('retrieveAllProduct')
+# def deleteProduct (request,pid=None):
+#     if request.method == 'POST':
+#         pid = request.POST['pid']
+#         product = Product.objects.get(pid=pid)
+#         product.delete()
+#         return redirect('retrieveAllProduct')
+#     else:
+#         product = Product.objects.get(pid=pid)
+#         context = {'product': product}
+#         return render(request, 'Product/deleteProduct.html', context)
+
+
+
+
+
+#######งาน12
 def showGoodsList (request):
     #Query
     result = Goods12.objects.all()
