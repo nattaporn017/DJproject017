@@ -39,4 +39,8 @@ urlpatterns = [
     path('<gid>/showGoodsOne', views.showGoodsOne, name='showGoodsOne'),
     path('showCustomerList', views.showCustomerList, name='showCustomerList'),
     path('<cid>/showCustomerOne', views.showCustomerOne, name='showCustomerOne'),
+
+    path('<pid>/updateProduct', views.updateProduct, name='updateProduct'),
+    path('<pid>/deleteProductOld', views.deleteProductOld, name='deleteProductOld'),
+    # path('<pid>/deleteProduct', views.deleteProduct, name='deleteProduct'),
 ]
