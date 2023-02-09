@@ -3,6 +3,8 @@ import datetime
 
 
 # Create your views here.
+def ass9(request):
+    return render(request,'Assignment09.html')
 def info(request):
     return render(request,'infoSTD.html')
 def edu(request):
@@ -29,8 +31,10 @@ def prod8(request):
     return render(request,'prod8.html')
 def idol(request):
     return render(request,'idol.html')
+#######
 def ass12(request):
     return render(request,'ASS12/Assignment12.html')
+######
 def datas(request):
     name="Nattaporn"
     surname="Boonmala"
@@ -57,8 +61,7 @@ def datas(request):
                'homeland': homeland, 'weight': weight, 'color': color,
                'job': job, 'idStd': idStd, 'address': address, 'height': height, 'food': food, 'lists':prolist}
     return render(request, 'datas.html',context)
-
-
+#######
 lstOurProduct = []
 # pd1 = product("P01", "รองเท้า adidas", "White", "36", 1499, 1, True)
 # lstOurProduct.append(pd1)
@@ -89,6 +92,7 @@ def inputProduct(request):
         form = ProductForm11()
     context = {'form': form}
     return render(request, 'Ass11/inputPro11.html', context)
+###############
 
 
 from .models import *
@@ -104,7 +108,6 @@ def retivevOneProduct(request, pid):
     return render(request, 'Product/retivevOneProduct.html',context)
 
 from django.contrib import messages
-
 def createProduct(request):
     if request.method == 'POST':
         form = ProductMForm(request.POST)
@@ -118,7 +121,7 @@ def createProduct(request):
                 messages.add_message(request,messages.WARNING,'รหัสสินค้าซ้ำกับที่มีอยู่แล้วในระบบ')
             messages.add_message(request, messages.WARNING,'ไม่สามารถบันทึกข้อมูลสินค้าใหม่ได้')
     else:
-        form = ProductMForm()
+        form = ProductMForm
     context = {'form':form}
     return render(request, 'Product/createProduct.html',context)
 def updateProduct (request,pid):
@@ -133,7 +136,7 @@ def updateProduct (request,pid):
             context = {'form': form}
             messages.add_message(request, messages.WARNING, 'ไม่สามารถบันทึกข้อมูลสินค้าใหม่ได้')
     else:
-        form.up
+
         context = {'form':form}
         # context = {'form': form, 'old_pid': product.pid}
 
@@ -163,7 +166,6 @@ def deleteProductOld (request,pid):
 
 #######งาน12
 def showGoodsList (request):
-    #Query
     result = Goods12.objects.all()
     context ={'result' : result}
     return render(request, 'ASS12/showGoodsList.html', context)
@@ -172,6 +174,41 @@ def showGoodsOne (request,gid):
     goodsone_info = Goods12.objects.get(gid=gid)
     context= {'goods': goodsone_info}
     return render(request, 'ASS12/showGoodsOne.html', context)
+def newGoodsCreate(request):
+    if request.method == 'POST':
+        form = GoodsForm12(request.POST)
+        if form.is_valid():
+            form.save()
+            # messages.add_message(request,messages.SUCCESS,'บันทึกข้อมูลสินค้าใหม่เรียบร้อย...')
+            return redirect('showGoodsList')
+        # else:
+        #     goods = Goods12.objects.get(pid=request.POST['pid'])
+        #     if goods:
+            #     messages.add_message(request,messages.WARNING,'รหัสสินค้าซ้ำกับที่มีอยู่แล้วในระบบ')
+            # messages.add_message(request, messages.WARNING,'ไม่สามารถบันทึกข้อมูลสินค้าใหม่ได้')
+    else:
+        form = GoodsForm12
+    context = {'form':form}
+    return render(request, 'ASS12/newGoodsCreate.html',context)
+def updateGood (request,gid):
+    context = {}
+    obj = Goods12.objects.get(gid=gid)
+    form = GoodsForm12(request.POST or None, instance=obj)
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            return redirect('showGoodsList')
+    else:
+        context["form"] = form
+        return render(request, "ASS12/updateGoods.html", context)
+
+def deleteGoods(request, gid):
+    Goods = Goods12.objects.get(gid=gid)
+    if request.method == "GET":
+        Goods.delete()
+        return redirect('showGoodsList')
+
+
 def showCustomerList (request):
     result = Customer12.objects.all()
     context = {'result': result }
@@ -180,3 +217,38 @@ def showCustomerOne (request,cid):
     customerone_info = Customer12.objects.get(cid=cid)
     context={'customer':customerone_info}
     return render(request, 'ASS12/showCustomerOne.html', context)
+def newCustomerCreate(request):
+    context = {}
+    if request.method == 'POST':
+        form = CusForm12(request.POST)
+        obj = Customer12.objects.filter(cid=request.POST['cid'])
+        if obj:
+            context["form"] = form
+            return render(request, "ASS12/newCustomerCreate.html", context)
+        if form.is_valid():
+            form.save()
+            return redirect('showCustomerList')
+        else:
+            return redirect('showGoodsList')
+    else:
+        form = CusForm12()
+    context = {
+        'form': form
+    }
+    return render(request, 'ASS12/newCustomerCreate.html', context)
+def updateCustomer (request,cid):
+    context = {}
+    obj = Customer12.objects.get(cid=cid)
+    form = CusForm12(request.POST or None, instance=obj)
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            return redirect('showCustomerList')
+    else:
+        context["form"] = form
+        return render(request, "ASS12/updateCustomer.html", context)
+def deleteCustomer (request,cid):
+    Cus = Customer12.objects.get(cid=cid)
+    if request.method == "GET":
+        Cus.delete()
+        return redirect('showCustomerList')

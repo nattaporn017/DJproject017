@@ -28,12 +28,12 @@
             <th>Net</th>
             <th>Category</th>
             <th>
-{#            <a href="{% url 'newGoods' %}">#}
+            <a href="{% url 'newGoodsCreate' %}">
                <button class="btn btn-success">
                 Add Product <i class=" fa fa-plus"></i>
-            </button>
+            </button> </a>
             </th>
-{#             </a>#}
+
         </tr>
         {% for goods in result  %}
         <tr>
@@ -48,12 +48,12 @@
             <a href="{% url 'showGoodsOne' goods.gid %}">
                 <i class="fa fa-search"></i>
              </a>
-{#            <a href="{% url 'goodsUpdate' goods.gid %}">#}
-{#                <i class="fa fa-edit"></i>#}
-{#             </a>#}
-{#            <a href="{% url 'goodsDel' goods.gid %}" onclick="return confirm('Are you sure you want to delete this item?');">#}
-{#                <i class="fa fa-delete-left"></i>#}
-{#             </a>#}
+            <a href="{% url 'updateGoods' goods.gid %}">
+                <i class="fa fa-wrench"></i>
+             </a>
+            <a href="{% url 'goodsDel' goods.gid %}" onclick="return confirm('Are you sure to delete ?');">
+                <i class="fa fa-trash-alt"></i>
+            </a>
         </td>
         </tr>
     {% endfor %}

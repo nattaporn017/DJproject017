@@ -3,6 +3,7 @@ from django.http import  HttpResponse
 from ProfileApp import views
 
 urlpatterns = [
+    path('ass9', views.ass9, name = 'ass9'),
     path('info', views.info, name = 'info'),
     path('edu', views.edu, name = 'edu'),
     path('fav', views.fav, name = 'fav'),
@@ -37,8 +38,15 @@ urlpatterns = [
     # path('base', views.base, name = 'base'),
     path('showGoodsList', views.showGoodsList, name='showGoodsList'),
     path('<gid>/showGoodsOne', views.showGoodsOne, name='showGoodsOne'),
+    path('newGoodsCreate', views.newGoodsCreate, name='newGoodsCreate'),
+    path('<str:gid>/updateGoods', views.updateGood, name='updateGoods'),
+    path('<str:gid>/goodsDel', views.deleteGoods, name='goodsDel'),
     path('showCustomerList', views.showCustomerList, name='showCustomerList'),
     path('<cid>/showCustomerOne', views.showCustomerOne, name='showCustomerOne'),
+    path('newCustomerCreate', views.newCustomerCreate, name='newCustomerCreate'),
+    path('<str:cid>/updateCustomer', views.updateCustomer, name='updateCustomer'),
+    path('<str:cid>/cusDel', views.deleteCustomer, name='cusDel'),
+
 
     path('<pid>/updateProduct', views.updateProduct, name='updateProduct'),
     path('<pid>/deleteProductOld', views.deleteProductOld, name='deleteProductOld'),

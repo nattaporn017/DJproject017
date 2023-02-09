@@ -97,6 +97,9 @@ class Customer12(models.Model):
     def __str__(self):
         return str(self.cid) + ":" + self.name + ":" + self.surname + ":" + self.carreer
 
+
+
+
 class Order12(models.Model):
     oid = models.CharField(max_length=5, primary_key=True, default="")
     date = models.DateField(default=datetime.date.today())

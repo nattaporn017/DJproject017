@@ -56,8 +56,8 @@ class ProductUpdateMForm(forms.ModelForm):
             'net': 'net',
             'category': 'category',
             }
-
-class GoodsForm12 (forms.ModelForm):
+######
+class GoodsForm12(forms.ModelForm):
     class Meta:
         model = Goods12
         fields =('goodscategory12', 'gid', 'name', 'brand', 'price','model', 'net', 'property')
@@ -80,4 +80,30 @@ class GoodsForm12 (forms.ModelForm):
             'price':'Price',
             'net':'Net',
             'property':'Property',
+        }
+
+class CusForm12(forms.ModelForm):
+    class Meta:
+        model = Customer12
+        fields = ('cid', 'name', 'surname', 'address', 'telephone', 'gender', 'carreer', 'password')
+        CHOICES = [('M', 'Male'), ('F', 'Female')]
+        widgets = {
+            'cid': forms.TextInput(attrs={'class': 'form-control'}),
+            'name': forms.TextInput(attrs={'class': 'form-control'}),
+            'surname': forms.TextInput(attrs={'class': 'form-control'}),
+            'address': forms.Textarea(attrs={'class': 'form-control', 'rows': 3, 'cols': 60}),
+            'telephone': forms.TextInput(attrs={'class': 'form-control'}),
+            'gender': forms.RadioSelect(choices=CHOICES),
+            'carreer': forms.TextInput(attrs={'class': 'form-control'}),
+            'password': forms.TextInput(attrs={'class': 'form-control'}),
+        }
+        labels = {
+            'cid': 'Cid',
+            'name': 'name',
+            'surname': 'surname',
+            'address': 'address',
+            'telephone': 'telephone',
+            'gender': 'gender',
+            'carreer': 'carreer',
+            'password': 'password'
         }

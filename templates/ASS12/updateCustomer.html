@@ -1,0 +1,32 @@
+{%  extends 'base.html' %}
+{% block content %}
+    {% load static %}
+    {% load humanize %}
+<div style="background-color: #dee2e6">
+    <br>
+    <h5 class="text-white" align='right'><a href="/ "><br><i class="fa fa-home"> Home</i></a></h5>
+    <br>
+<div class="row " style="font-family: Comic Sans MS; ">
+    <h1 class="text-center text-dark bg-white"> Update Customer </h1>
+    <br>
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6">
+        <form method="post" class="form form-control text-danger" style="background-color: #dee2e6">
+    {% csrf_token %}
+    {{ form.as_table }}
+            <br>
+    <div align="right">
+        <input type="submit" value="Save" class="btn btn-success">
+        <input type="reset" value="Reset" class="btn btn-warning">
+        <button type ="cancel" value="Cancel" class="btn btn-danger"
+                onclick="location.href={% url 'showCustomerList' %}">Cancel</button>
+    </div>
+        </form>
+
+    <div class="col-lg-3"></div>
+        <br><br><br>
+</div>
+
+</div>
+ </div>
+{% endblock %}
